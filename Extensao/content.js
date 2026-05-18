@@ -1,7 +1,12 @@
 (function () {
   const id = "fasttrack-apple-final-v1";
-  if (document.getElementById(id)) document.getElementById(id).remove();
-
+  
+  // Se já existir na página, o clique no ícone fecha e encerra o script
+  const existingPanel = document.getElementById(id);
+  if (existingPanel) {
+    existingPanel.remove();
+    return; 
+  }
   // ESTADO E TEMA
   let isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   let activeTab = "ext";
